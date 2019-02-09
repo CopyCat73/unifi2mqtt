@@ -31,7 +31,9 @@ Options:
   -v, --verbosity       possible values: "error", "warn", "info", "debug"
                                                                [default: "info"]
   -n, --name            instance name. used as topic prefix   [default: "unifi"]
-  -u, --url             mqtt broker url            [default: "mqtt://127.0.0.1"]
+  -u, --mqtturl         mqtt broker url            [default: "mqtt://127.0.0.1"]
+  -a, --mqttusername    mqtt username                              [default: ""]
+  -b, --mqttpassword    mqtt password                              [default: ""]
   -h, --help            Show help                                      [boolean]
   --version             Show version number                            [boolean]
 
