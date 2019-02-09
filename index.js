@@ -23,9 +23,9 @@ const dataWifi = {};
 const idDevice = {};
 const dataDevice = {};
 
-log.info('mqtt trying to connect', config.url);
+log.info('mqtt trying to connect', config.mqtturl);
 
-const mqtt = Mqtt.connect(config.url, {
+const mqtt = Mqtt.connect(config.mqtturl, {
     username: config.mqttuser, password: config.mqttpassword , will: {topic: config.name + '/connected', payload: '0', retain: true},
     rejectUnauthorized: !config.insecure
 });
@@ -39,7 +39,7 @@ function mqttPub(topic, payload, options) {
 }
 
 mqtt.on('connect', () => {
-    log.info('mqtt connected', config.url);
+    log.info('mqtt connected', config.mqtturl);
     mqttPub(config.name + '/connected', unifiConnected ? '2' : '1', {retain: true});
 
     log.info('mqtt subscribe', config.name + '/set/#');
@@ -53,7 +53,7 @@ mqtt.on('connect', () => {
 mqtt.on('close', () => {
     if (mqttConnected) {
         mqttConnected = false;
-        log.info('mqtt closed ' + config.url);
+        log.info('mqtt closed ' + config.mqtturl);
     }
 });
 
