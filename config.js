@@ -20,9 +20,9 @@ module.exports = require('yargs')
         w: 'unifi-site',
         h: 'help',
         n: 'name',
-        u: 'mqtt-url',
-        b: 'mqtt-username',
-        c: 'mqtt-password',
+        u: 'mqtturl',
+        b: 'mqttusername',
+        c: 'mqttpassword',
         v: 'verbosity',
         k: 'insecure'
     })
