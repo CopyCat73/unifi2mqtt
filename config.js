@@ -9,6 +9,8 @@ module.exports = require('yargs')
     .describe('v', 'possible values: "error", "warn", "info", "debug"')
     .describe('n', 'instance name. used as topic prefix')
     .describe('u', 'mqtt broker url')
+    .describe('b', 'mqtt broker username')
+    .describe('c', 'mqtt broker password')
     .describe('h', 'show help')
     .alias({
         a: 'unifi-host',
@@ -18,7 +20,9 @@ module.exports = require('yargs')
         w: 'unifi-site',
         h: 'help',
         n: 'name',
-        u: 'url',
+        u: 'mqtt-url',
+        b: 'mqtt-username',
+        c: 'mqtt-password',
         v: 'verbosity',
         k: 'insecure'
     })
@@ -27,6 +31,8 @@ module.exports = require('yargs')
         p: 8443,
         c: 'admin',
         u: 'mqtt://127.0.0.1',
+        b: '',
+        c: '',
         n: 'unifi',
         v: 'info',
         w: 'default'
